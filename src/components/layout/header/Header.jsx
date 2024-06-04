@@ -28,7 +28,9 @@ const Header = () => {
           </button>
         </form>
         <div className="header__btns">
-          <button>Login</button>
+          <Link to={"/admin/manageProduct"}>
+            <button>Admin</button>
+          </Link>
         </div>
       </nav>
     </header>
