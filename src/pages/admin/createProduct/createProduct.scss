@@ -1,0 +1,65 @@
+.create__section {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 50px;
+  form {
+    display: flex;
+
+    flex-direction: column;
+    gap: 50px;
+    .with__label {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      input {
+        background: rgb(228, 228, 228);
+        border: none;
+        outline: none;
+        width: 50%;
+        height: 50px;
+        border-radius: 10px;
+        padding: 10px 20px;
+      }
+    }
+    .address__inputs {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 50%;
+      gap: 30px;
+      input {
+        width: 100%;
+      }
+    }
+    button {
+      width: 200px;
+      height: 50px;
+    }
+    @media (max-width: 950px) {
+      .address__inputs {
+        width: 100%;
+      }
+      .with__label {
+        input {
+          width: 100%;
+        }
+      }
+    }
+    @media (max-width: 730px) {
+      .address__inputs {
+        flex-direction: column;
+      }
+    }
+    @media (max-width: 650px) {
+      .address__inputs {
+        flex-direction: row;
+      }
+    }
+    @media (max-width: 450px) {
+      .address__inputs {
+        flex-direction: column;
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+a{
+  color: inherit;
+}
+
+button{
+  cursor: pointer;
+  padding: 10px 15px;
+  background: black;
+  border: 1px solid black;
+  color: white;
+  transition: 0.4s;
+  border-radius: 5px;
+}
+
+button:hover{
+  background: white;
+  color: black;
+}
+
+.container{
+  width: 85%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
