@@ -2,8 +2,13 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./header.scss";
 import { IoSearch } from "react-icons/io5";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const wishlistDataLength = useSelector(
+    (state) => state.wishlist.value
+  ).length;
+
   return (
     <header>
       <nav className="container header">
@@ -18,7 +23,9 @@ const Header = () => {
             <NavLink to={"/admin/manageProduct"}>Admin</NavLink>
           </li>
           <li>
-            <NavLink to={"/"}>Wishlist</NavLink>
+            <NavLink to={"/wishlist"}>
+              Wishlist <sup>{wishlistDataLength}</sup>
+            </NavLink>
           </li>
         </ul>
         <form className="header__form" action="">
