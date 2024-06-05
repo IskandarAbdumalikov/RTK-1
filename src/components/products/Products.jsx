@@ -36,7 +36,6 @@ const Products = ({ showManage, data }) => {
         setProducts((prevProducts) =>
           prevProducts.filter((product) => product.id !== id)
         );
-        alert("Product o`chirildi");
       } catch (error) {
         alert("O`chirilmadi");
       }
