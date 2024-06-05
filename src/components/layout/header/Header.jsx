@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./header.scss";
 import { IoSearch } from "react-icons/io5";
 import { useSelector } from "react-redux";
+import { useGetSearchProductsQuery } from "../../../features/apiSlice";
+import NavSearchModule from "./NavSearchModule";
 
 const Header = () => {
+  const [value, setValue] = useState("");
+
+  const { data, isLoading, isSuccess } = useGetSearchProductsQuery(value, {
+    skip: value.trim().length === 0, 
+  });
+
   const wishlistDataLength = useSelector(
     (state) => state.wishlist.value
   ).length;
+
+  const handleInputChange = (e) => {
+    setValue(e.target.value);
+  };
 
   return (
     <header>
@@ -28,11 +40,21 @@ const Header = () => {
             </NavLink>
           </li>
         </ul>
-        <form className="header__form" action="">
-          <input placeholder="Search..." type="text" name="" id="" />
-          <button>
+        <form
+          className="header__form"
+          action=""
+          onSubmit={(e) => e.preventDefault()}
+        >
+          <input
+            placeholder="Search..."
+            type="text"
+            value={value}
+            onChange={handleInputChange} 
+          />
+          <button type="submit">
             <IoSearch />
           </button>
+          {value.trim() && <NavSearchModule data={data} />}
         </form>
         <div className="header__btns">
           <Link to={"/admin/manageProduct"}>

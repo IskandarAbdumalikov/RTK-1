@@ -24,28 +24,55 @@ header {
     justify-content: space-between;
     gap: 40px;
   }
-  &__form {
+}
+
+.header__form {
+  display: flex;
+  align-items: center;
+  width: 30%;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: relative;
+  input {
+    width: 85%;
+    height: 50px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 0px 10px;
+    font-size: 18px;
+  }
+  button {
+    height: 50px;
+    flex: 1;
+    border-radius: 0px;
+    font-size: 18px;
+    border-radius: 10px;
+  }
+  .nav__search-results {
+    position: absolute;
+    top: calc(100% + 5px);
+    border-radius: 10px;
+    height: auto;
+    max-height: 300px;
+    width: 100%;
+    padding: 10px;
+    overflow: auto;
+    left: 0;
+    background: white;
+    box-shadow: 3px 5px 10px #0002;
+  }
+
+  .nav__search__card {
     display: flex;
     align-items: center;
-    width: 30%;
-    border: 1px solid black;
-    border-radius: 10px;
-    overflow: hidden;
-    input {
-      width: 85%;
-      height: 50px;
-      outline: none;
-      border: none;
-      border-radius: 0px;
-      padding: 0px 10px;
-      font-size: 18px;
-    }
-    button {
-      height: 50px;
-      flex: 1;
-      border-radius: 0px;
-      font-size: 18px;
-    }
+    gap: 10px;
+  }
+
+  .search__result__right {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
   }
 }
 

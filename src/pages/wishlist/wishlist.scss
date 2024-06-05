@@ -1,10 +1,19 @@
-.wishlist{
-    text-align: center;
+// .wishlist{
+//     text-align: center;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 10px;
+//     h2{
+//         font-size: 50px;
+//         padding-top: 50px;
+//     }
+// }
+
+.wishlist {
+  .no__card{
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    h2{
-        font-size: 50px;
-        padding-top: 50px;
-    }
+    gap: 20px;
+    align-items: center;
+  }
 }
