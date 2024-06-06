@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./createProduct.scss";
 import { usePostProductMutation } from "../../../features/apiSlice";
+import { useNavigate } from "react-router-dom";
 const initialState = {
   id: new Date().getTime(),
   title: "",
@@ -11,6 +12,7 @@ const initialState = {
 };
 
 const CreateProduct = () => {
+  let navigate = useNavigate();
   const [formData, setFormData] = useState(initialState);
   const [createProduct, { data, isLoading, isError, isSuccess, error }] =
     usePostProductMutation();
@@ -30,6 +32,7 @@ const CreateProduct = () => {
   let handleCreateCard = (e) => {
     e.preventDefault();
     createProduct(formData);
+    navigate("/admin/manageProduct");
   };
 
   return (
